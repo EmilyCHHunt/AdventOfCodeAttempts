@@ -21,9 +21,11 @@ def checkSafety(level, failedBefore):
 
         if difference > 3 or difference == 0 or difference < -3:
             if not failedBefore:
-                newLevel = level;
-                del newLevel[i];
-                return checkSafety(newLevel, True);
+                for j in range(len(level)):
+                    newLevel = level.copy();
+                    del newLevel[j];
+                    if checkSafety(newLevel, True):
+                        return True;
             return False;
 
         if not difference * direction > 0:
@@ -31,7 +33,6 @@ def checkSafety(level, failedBefore):
                 for j in range(len(level)):
                     newLevel = level.copy();
                     del newLevel[j];
-                    print(newLevel)
                     if checkSafety(newLevel, True):
                         return True;
             return False;
@@ -48,5 +49,4 @@ for level in levelsList:
     else:
         safetyList.append("Unsafe");
 
-print(safetyList);
 print("Safe cases: ", safetyList.count("Safe"));
