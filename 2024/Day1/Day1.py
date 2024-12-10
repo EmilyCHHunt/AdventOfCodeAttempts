@@ -2,6 +2,7 @@
 # @author Emily Chesterton-Hunt
 import re;
 
+
 # Part 1 list distance:
 # Shorthand explanation: calculate the distance between the two lists
 # We have been given two lists in the input file they are then separated and sorted.
@@ -10,11 +11,12 @@ import re;
 def generateLists():
     inputFile = open("input");
     inputText = inputFile.read();
-    inputList = re.split("\n|   ",inputText);
+    inputList = re.split("\n|   ", inputText);
 
     locIDList1 = inputList[::2]
     locIDList2 = inputList[1::2]
     return locIDList1, locIDList2;
+
 
 locIDList1, locIDList2 = generateLists();
 totalDistance = 0

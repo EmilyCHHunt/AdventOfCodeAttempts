@@ -12,6 +12,7 @@ def generateLists():
     reportsList = [level.split(" ") for level in reportsList];
     return reportsList;
 
+
 # Checks whether the level is safe
 def checkSafety(level, failedBefore):
     if len(level) > 1:
@@ -19,8 +20,8 @@ def checkSafety(level, failedBefore):
     else:
         return True;
 
-    for i in range(1,len(level)):
-        difference = int(level[i-1]) - int(level[i]);
+    for i in range(1, len(level)):
+        difference = int(level[i - 1]) - int(level[i]);
 
         if difference > 3 or difference == 0 or difference < -3:
             if not failedBefore:
@@ -41,6 +42,7 @@ def checkSafety(level, failedBefore):
             return False;
 
     return True;
+
 
 levelsList = generateLists();
 safetyList = []

@@ -2,6 +2,7 @@
 # @author Emily Chesterton-Hunt
 import re;
 
+
 # Part 1 list distance:
 # Calculate whether each level is "safe"
 # The rules:
@@ -14,6 +15,7 @@ def generateLists():
     levelsList = [level.split(" ") for level in levelsList];
     return levelsList;
 
+
 # Checks whether the level is safe
 def checkSafety(level):
     if len(level) > 1:
@@ -21,8 +23,8 @@ def checkSafety(level):
     else:
         return True;
 
-    for i in range(1,len(level)):
-        difference = int(level[i-1]) - int(level[i]);
+    for i in range(1, len(level)):
+        difference = int(level[i - 1]) - int(level[i]);
 
         if difference > 3 or difference == 0 or difference < -3:
             return False;
@@ -30,6 +32,7 @@ def checkSafety(level):
             return False;
 
     return True;
+
 
 levelsList = generateLists();
 safetyList = []
