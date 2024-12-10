@@ -2,6 +2,9 @@
 # @author Emily Chesterton-Hunt
 
 # Task2 the reports are now safe if by removing a level it is safe
+# This is done through brute force. When an error is found we loop
+# through the report and remove each index until a correct report is
+# found or there are the end is reached
 def generateLists():
     inputFile = open("input");
     inputText = inputFile.read();

@@ -3,7 +3,10 @@
 import re;
 
 # Part 1 list distance:
-# Calculate the distance between the two lists
+# Shorthand explanation: calculate the distance between the two lists
+# We have been given two lists in the input file they are then separated and sorted.
+# Each item in the second list is subtracted from the first and the absolute result is added to a total
+# to calculate the distance between the lists
 def generateLists():
     inputFile = open("input");
     inputText = inputFile.read();
@@ -23,7 +26,9 @@ print("distance : ", distance);
 
 # Part 2
 # Find the similarity of the list:
-# Multiply every number in list 1 by the number of times it occurs
+# Shorthand explanation:
+# Multiply every number in list 1 by the number of times it occurs in list 2
+# so if the number 3 appears in list two 4 times we calculate 3*4 and add it to the similarity value
 list1, list2 = generateLists();
 similarity = 0;
 similarityList = [int(index) * list2.count(index) for index in list1];
