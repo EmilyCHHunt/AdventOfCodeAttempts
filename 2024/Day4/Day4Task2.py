@@ -1,3 +1,10 @@
+# Day 4 task 2 of the 2024 advent of code programming puzzles
+# @author Emily Chesterton-Hunt
+#
+# The goal of this task was to find MAS as an X in the wordsearch
+# M.S
+# .A.
+# M.S
 def readFile():
     inputFile = open("input");
     inputText = inputFile.read();
@@ -7,7 +14,8 @@ def readFile():
 def stringToList(text):
     return text.split('\n')
 
-
+# Searches the word search for the centre of the target word and calls searchLine to get all strings from that point
+# then every possible direction of the worlds
 def wordSearch(wordSearchList, targetWord):
     wordNum = 0;
     for y in range(len(wordSearchList)):
@@ -22,7 +30,7 @@ def wordSearch(wordSearchList, targetWord):
 
     return wordNum;
 
-
+# Finds all valid strings coming from the given coordinate ( diagonals) and returns them as a list
 def searchLine(wordSearchList, x, y):
     foundStrings = ["", ""];
 
